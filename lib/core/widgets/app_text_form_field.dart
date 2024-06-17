@@ -15,7 +15,7 @@ class AppTextFormField extends StatelessWidget {
       required this.hintText,
       this.isobscureText,
       this.suffixIcon,
-      this.backgroundColor});
+      this.backgroundColor,  this.controller, required this.validator});
   final EdgeInsetsGeometry? contetPadding;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
@@ -25,24 +25,24 @@ class AppTextFormField extends StatelessWidget {
   final bool? isobscureText;
   final Widget? suffixIcon;
   final Color? backgroundColor;
+  final TextEditingController? controller;
+ final  Function(String?) validator;
+
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+     controller: controller,
       decoration: InputDecoration(
           isDense: true,
           contentPadding: contetPadding ??
               EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
           focusedBorder: focusedBorder ??
-              OutlineInputBorder(
-                  borderSide: const BorderSide(
-                      color: ColorManager.mainBlue, width: 1.3),
-                  borderRadius: BorderRadius.circular(16.0)),
+              borderDetails(ColorManager.mainBlue),
           enabledBorder: enabledBorder ??
-              OutlineInputBorder(
-                  borderSide: const BorderSide(
-                      color: ColorManager.lighterGray, width: 1.3),
-                  borderRadius: BorderRadius.circular(16.0)),
+              borderDetails(ColorManager.lighterGray),
+          errorBorder:borderDetails( Colors.red), 
+          focusedErrorBorder: borderDetails(Colors.red),
           hintStyle: hintStyle ?? TextStyles.font14LightGrayRegular,
           hintText: hintText,
           suffixIcon: suffixIcon,
@@ -50,6 +50,18 @@ class AppTextFormField extends StatelessWidget {
           filled: true),
       obscureText: isobscureText ?? false,
       style: TextStyles.font14DarkBlueMedium,
+      validator:(value) {
+        return validator(value);
+      },
     );
+  }
+
+ 
+ 
+  OutlineInputBorder borderDetails(Color color) {
+    return OutlineInputBorder(
+                borderSide:  BorderSide(
+                    color: color, width: 1.3),
+                borderRadius: BorderRadius.circular(16.0));
   }
 }
