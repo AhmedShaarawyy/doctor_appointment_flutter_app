@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:vezeeta_app/features/login/data/models/login_request_body.dart';
 import 'package:vezeeta_app/features/login/data/repos/login_repo.dart';
 import 'package:vezeeta_app/features/login/logic/cubit/login_state.dart';
@@ -8,7 +9,15 @@ class LoginCubit extends Cubit<LoginState> {
 
   final LoginRepo _loginRepo;
 
-  void emitLoginStates(LoginRequestBody loginRequestBody) async {
+
+
+  TextEditingController emailController = TextEditingController();
+
+  TextEditingController passwordController = TextEditingController();
+
+    final formKey = GlobalKey<FormState>();
+
+  void emitLoginStates(LoginRequestBody loginRequestBody, ) async {
     emit(const LoginState.loading());
     final response = await _loginRepo.login(loginRequestBody);
 
