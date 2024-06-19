@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Home Screen"),
       ),
-      body: Center(child: Image.asset('assets/images/sss.png')),
+      body: Center(child: Icon(Icons.home, size: 160)),
     );
   }
 }

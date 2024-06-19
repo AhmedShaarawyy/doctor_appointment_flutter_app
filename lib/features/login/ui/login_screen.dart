@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
-=======
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vezeeta_app/core/helpers/spacing.dart';
-import 'package:vezeeta_app/core/theming/styles.dart';
-import 'package:vezeeta_app/core/widgets/app_text_button.dart';
-import 'package:vezeeta_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:vezeeta_app/features/login/ui/widgets/dont_have_account_text.dart';
-import 'package:vezeeta_app/features/login/ui/widgets/terms_and_condition_text.dart';
+
+import '../../../core/helpers/spacing.dart';
+import '../../../core/theming/styles.dart';
+import '../../../core/widgets/app_text_button.dart';
+import '../logic/cubit/login_cubit.dart';
+import 'widgets/dont_have_account_text.dart';
 import 'widgets/email_and_password.dart';
 import 'widgets/login_bloc_listener.dart';
->>>>>>> Stashed changes
+import 'widgets/terms_and_condition_text.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -19,12 +17,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< Updated upstream
-      body: Center(
-        child: Text('Login Screen'),
-      ),
-    );
-=======
+    
         body: SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
@@ -81,6 +74,5 @@ class LoginScreen extends StatelessWidget {
     //       email: context.read<LoginCubit>().emailController.text,
     //       password: context.read<LoginCubit>().passwordController.text),);
     // }
->>>>>>> Stashed changes
   }
 }
