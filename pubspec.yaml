@@ -35,7 +35,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5
-  flutter_native_splash: ^2.4.0
+  flutter_launcher_icons: ^0.13.1
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.10+1
   freezed: 2.5.2
@@ -93,3 +93,4 @@ flutter_assets:
   assets_path: assets/svgs/
   output_path: lib/core/utils
   filename: app_images.dart
+
