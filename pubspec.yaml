@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  build_runner: ^2.4.11
   cupertino_icons: ^1.0.6
   dio: ^5.4.3+1
   easy_localization: ^3.0.7
@@ -92,9 +93,4 @@ flutter_assets:
   assets_path: assets/svgs/
   output_path: lib/core/utils
   filename: app_images.dart
-  #App Icon & Splash Screen
-flutter_launcher_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/images/splash_android12_logo.png"
-  min_sdk_android: 21 # android min sdk min:16, default 21
+
